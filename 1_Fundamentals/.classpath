@@ -3,6 +3,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="1_1_BasicProgModel"/>
 	<classpathentry kind="src" path="1_2_DataAbstraction"/>
+	<classpathentry kind="src" path="1_3_BagsQueuesStacks"/>
 	<classpathentry kind="lib" path="lib/stdlib.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
