@@ -56,6 +56,14 @@ public class MyStack<Item> implements Iterable<Item> {
 		return item;
 	}
 	
+	/**
+	 * update at 2018-01-24
+	 * @return
+	 */
+	public Item peek() {
+		return first.item;
+	}
+	
 	@Override
 	public Iterator<Item> iterator() {
 		return new ListIterator();
