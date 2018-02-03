@@ -4,6 +4,9 @@
 	<classpathentry kind="src" path="1_1_BasicProgModel"/>
 	<classpathentry kind="src" path="1_2_DataAbstraction"/>
 	<classpathentry kind="src" path="1_3_BagsQueuesStacks"/>
+	<classpathentry kind="src" path="1_4_AnalysisOfAlgorithms"/>
+	<classpathentry kind="src" path="1_5_CaseStudyUnion-Find"/>
+	<classpathentry kind="src" path="ProgAssignment"/>
 	<classpathentry kind="lib" path="lib/stdlib.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
