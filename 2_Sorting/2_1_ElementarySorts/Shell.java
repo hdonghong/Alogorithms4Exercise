@@ -1,21 +1,37 @@
 
 /**
- * @ClassName	Insertion	
- * @Description	插入排序算法
+ * @ClassName	Shell	
+ * @Description	希尔排序算法
  * @author		hdonghong
  * @version 	v1.0 
- * @since		2018/02/01 23:02:13
+ * @since		2018/02/02 07:25:15
  */
-public class Insertion {
-	
+public class Shell {
+
 	public static <T> void sort(Comparable<T>[] a) {
 		int n = a.length;
-		for (int i = 1; i < n; i++) { // 将较小值前移
-			for (int j = i; j > 0 && less(a[j], a[j-1]); j--) {
-				exch(a, j, j-1);
+		int h = 1;
+		while (h < n/3) h = 3*h + 1; // 1, 4, 13, 40, 121, 364, 1093...
+		while (h >= 1) {
+			for (int i = h; i < n; i++) {
+				for (int j = i; j >= h && less(a[j], a[j-h]); j -= h) {
+					exch(a, j, j-h);
+				}
+			}
+			h /= 3;
+		}
+	}
+	
+	public static <T> void originalSort(Comparable<T>[] a) {
+		int n = a.length;
+		for (int h = n / 2; h > 0; h /= 2) {
+			// 进行插入排序
+			for (int i = h; i < n; i++) {
+				for (int j = i; j >= h && less(a[j], a[j-h]); j -= h) {
+					exch(a, j, j-h);
+				}
 			}
 		}
-		
 	}
 	
 	private static boolean less(Comparable v, Comparable w) {
@@ -51,7 +67,7 @@ public class Insertion {
 	 * @return
 	 */
 	private static boolean isSorted(Comparable[] a) {
-		for (int i = 0; i < a.length; i++) {
+		for (int i = 1; i < a.length; i++) {
 			if (less(a[i], a[i-1])) return false;
 		}
 		return true;
@@ -61,7 +77,8 @@ public class Insertion {
 	 * 测试用例
 	 */
 	public static void main(String[] args) {
-		String[] a = In.readStrings();
+//		String[] a = In.readStrings();
+		String[] a =  {  "S" , "H" , "E" , "L" , "L" , "S" , "O" , "R" , "T" , "E" , "X" , "A" , "M" , "P" , "L" , "E" } ;
 		sort(a);
 		StdOut.println(isSorted(a));
 		show(a);
