@@ -41,6 +41,6 @@ public class Ex_2_2_08 {
 	public static void main(String[] args) {
 		String[] a = new String[] {"M", "E", "R", "G", "E", "S", "O", "R", "T", "E", "X", "A", "M", "P", "L", "E" };
 		sort(a);
-		System.err.println(Arrays.toString(a));
+		System.out.println(Arrays.toString(a));
 	}
 }
